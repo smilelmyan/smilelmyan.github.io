@@ -319,24 +319,14 @@
 </code></pre>
 <h3 id="按组合键-ctrl-或-f4-键唤出输入方案选单">按组合键 Ctrl+` 或 F4 键唤出输入方案选单</h3>
 <p>在Linux中配置文件的位置为：~/.config/ibus/rime/。初次安装自动在里面部署预设的输入方案和设定文件，更改设定需重新部署。里面有用的文件：</p>
-<blockquote>
-<p>[全局设定] default.yaml</p>
-</blockquote>
-<blockquote>
-<p>[预设输入方案副本] &lt;方案标识&gt;.schema.yaml</p>
-</blockquote>
-<blockquote>
-<p>[安装信息] installation.yaml</p>
-</blockquote>
-<blockquote>
-<p>[用户状态信息] user.yaml</p>
-</blockquote>
-<blockquote>
-<p>[编译产生的二进制文件] *.bin</p>
-</blockquote>
-<blockquote>
-<p>[用户词典] &lt;词典名&gt;.userdb.kct</p>
-</blockquote>
+<ul>
+<li>[全局设定] default.yaml</li>
+<li>[预设输入方案副本] &lt;方案标识&gt;.schema.yaml</li>
+<li>[安装信息] installation.yaml</li>
+<li>[用户状态信息] user.yaml</li>
+<li>[编译产生的二进制文件] *.bin</li>
+<li>[用户词典] &lt;词典名&gt;.userdb.kct</li>
+</ul>
 <p>自动触发重新部署：</p>
 <pre><code>rm ~/.config/ibus/rime/default.yaml; ibus-daemon -drx
 </code></pre>
