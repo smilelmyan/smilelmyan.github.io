@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lmyan&#39;s Blog</title>
+    <link>https://mylife.github.io/</link>
+    <description>Recent content on Lmyan&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 27 Jul 2018 21:23:54 +0800</lastBuildDate>
+    
+        <atom:link href="https://mylife.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Linux WPS 使用及 Rime 输入法安装</title>
+      <link>https://mylife.github.io/2020/02/wps/</link>
+      <pubDate>Mon, 03 Feb 2020 20:50:30 +0800</pubDate>
+      
+      <guid>https://mylife.github.io/2020/02/wps/</guid>
+      <description>安装WPS 最近用的系统是Ubuntu 18.04，直接去官网下载就能安装。类似的像有道词典、网易云音乐都能直接在官网下载安装，用起来都不错，总</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 18.04 软件安装</title>
+      <link>https://mylife.github.io/2020/01/snap/</link>
+      <pubDate>Sun, 12 Jan 2020 18:50:40 +0800</pubDate>
+      
+      <guid>https://mylife.github.io/2020/01/snap/</guid>
+      <description>关于常见的 Linux 发行版包管理基本操作参见：Linux软件包管理基本操作入门 apt安装 基于Debian的发行版最初使用apt-get、apt-ca</description>
+    </item>
+    
+    <item>
+      <title>Hugo Markdown基础语法</title>
+      <link>https://mylife.github.io/2020/01/markdown/</link>
+      <pubDate>Fri, 10 Jan 2020 17:17:12 +0800</pubDate>
+      
+      <guid>https://mylife.github.io/2020/01/markdown/</guid>
+      <description>Markdown基础语法 Hugo 0.60以后采用Goldmark作为Markdown的默认引擎。它速度快符合CommonMark且非常灵活。需要注</description>
+    </item>
+    
+    <item>
+      <title>Kdenlive非线性视频剪辑软件</title>
+      <link>https://mylife.github.io/2019/05/kdenlive/</link>
+      <pubDate>Sun, 26 May 2019 19:29:19 +0800</pubDate>
+      
+      <guid>https://mylife.github.io/2019/05/kdenlive/</guid>
+      <description>Linux下有许多非线性视频剪辑软件，免费的有openshot、shotcut和kdenlive，付费的有davinci。推荐kdenliv</description>
+    </item>
+    
+    <item>
+      <title>Tor &amp; SS 代理</title>
+      <link>https://mylife.github.io/2019/01/tor-ss/</link>
+      <pubDate>Mon, 14 Jan 2019 19:19:47 +0800</pubDate>
+      
+      <guid>https://mylife.github.io/2019/01/tor-ss/</guid>
+      <description>Tor是用来实现匿名通信的软件，可以隐藏自己所在的公网IP，可以保护个人隐私，不过就是网速太慢。 Ubuntu安装SS $sudo apt install shadowsocks-libev simple-obfs 配置 /etc/shadowsocks-libev/config.json 添加信息</description>
+    </item>
+    
+    <item>
+      <title>Vsftpd 匿名用户配置</title>
+      <link>https://mylife.github.io/2018/09/vsftpd/</link>
+      <pubDate>Thu, 06 Sep 2018 20:15:06 +0800</pubDate>
+      
+      <guid>https://mylife.github.io/2018/09/vsftpd/</guid>
+      <description>vsftpd 是“very secure FTP daemon”的缩写，安全性是它的一个最大的特点。vsftpd是一款在Linux发行版中最受推崇的FTP服务器程序。特点是</description>
+    </item>
+    
+    <item>
+      <title>Arch linux install i3 windows manager</title>
+      <link>https://mylife.github.io/2018/08/i3/</link>
+      <pubDate>Sun, 19 Aug 2018 18:36:14 +0800</pubDate>
+      
+      <guid>https://mylife.github.io/2018/08/i3/</guid>
+      <description>i3是一个非常有效率的窗口管理器。 安装i3和状态栏 $ sudo pacman -S i3-gaps i3status i3 配置 开机启动 在.xinitrc中添加 exec i3 在.bashrc中添加 if [[ &amp;quot;$(tty)&amp;quot; = &amp;quot;/dev/tty1&amp;quot; ]]; then</description>
+    </item>
+    
+    <item>
+      <title>Arch配置i3桌面的终端和输入法</title>
+      <link>https://mylife.github.io/2018/08/config-arch/</link>
+      <pubDate>Sun, 12 Aug 2018 22:11:13 +0800</pubDate>
+      
+      <guid>https://mylife.github.io/2018/08/config-arch/</guid>
+      <description>urxvt配置.Xresources文件 一般安装rxvt-unicode 如需要在ranger中支持照片预览，需要安装aur中的rxvt-un</description>
+    </item>
+    
+    <item>
+      <title>latex及字体安装</title>
+      <link>https://mylife.github.io/2018/08/latex/</link>
+      <pubDate>Sun, 12 Aug 2018 18:15:54 +0800</pubDate>
+      
+      <guid>https://mylife.github.io/2018/08/latex/</guid>
+      <description>安装TexLive archlinux的官方仓库，有textlive-most和texlive-lang两个组包，不想折腾每个组件都是做什么的</description>
+    </item>
+    
+    <item>
+      <title>vim编辑器</title>
+      <link>https://mylife.github.io/2018/08/vim-config/</link>
+      <pubDate>Sun, 05 Aug 2018 09:53:23 +0800</pubDate>
+      
+      <guid>https://mylife.github.io/2018/08/vim-config/</guid>
+      <description>vim的配置文件 ~/.viminfo 在vim中操作的行为，vim会自动记录下来，保存在 ~/.viminfo 文件中。这样为了方便下次处理，如：vim打开文件时，光标会自动在上次离</description>
+    </item>
+    
+    <item>
+      <title>samba文件共享</title>
+      <link>https://mylife.github.io/2018/08/samba-install/</link>
+      <pubDate>Thu, 02 Aug 2018 21:53:18 +0800</pubDate>
+      
+      <guid>https://mylife.github.io/2018/08/samba-install/</guid>
+      <description>搭建文件分享服务，方便和其它设备共享文件。 安装 $ sudo pacman -S samba 配置 获取默认配置文件 $ sudo wget &amp;quot;https://git.samba.org/samba.git/?p=samba.git;a=blob_plain;f=examples/smb.conf.default;hb=HEAD&amp;quot; -O /etc/samba/smb.conf 编辑 /etc/samba/smb.conf，折腾了好</description>
+    </item>
+    
+    <item>
+      <title>arira2下载工具</title>
+      <link>https://mylife.github.io/2018/07/arira2-install/</link>
+      <pubDate>Tue, 31 Jul 2018 19:13:55 +0800</pubDate>
+      
+      <guid>https://mylife.github.io/2018/07/arira2-install/</guid>
+      <description>安装 $ sudo pacman -S aria2 配置 配置文件 ~/.config/aria2/aria2.conf ~/Desktop/aria2.session aria2.conf配置文件内容，aria2.session是用来存地址的。 #允许rpc enable-rpc=true #允许所有来源, we</description>
+    </item>
+    
+    <item>
+      <title>Arch linux i3-gaps install mpd ncmpcpp</title>
+      <link>https://mylife.github.io/2018/07/mpd-ncmpcpp/</link>
+      <pubDate>Sun, 29 Jul 2018 09:06:55 +0800</pubDate>
+      
+      <guid>https://mylife.github.io/2018/07/mpd-ncmpcpp/</guid>
+      <description>安装 $ sudo pacman -S mpd mpc ncmpcpp mpd 配置 个人配置文件~/.config/mpd/mpd.conf $ mkdir ~/.config/mpd $ cp /usr/share/doc/mpd/mpdconf.example ~/.config/mpd/mpd.conf 取消注释即可，这里我只用了 music_directory &amp;quot;~/Music/&amp;quot; playlist_directory &amp;quot;~/.config/mpd/playlists&amp;quot; db_file &amp;quot;~/.config/mpd/database&amp;quot; 又加了一</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://mylife.github.io/about/</link>
+      <pubDate>Fri, 27 Jul 2018 21:23:54 +0800</pubDate>
+      
+      <guid>https://mylife.github.io/about/</guid>
+      <description>生活生活 该干点什么？？？</description>
+    </item>
+    
+    <item>
+      <title>Linux Install Hugo &amp; Git</title>
+      <link>https://mylife.github.io/2018/07/hugo/</link>
+      <pubDate>Tue, 24 Jul 2018 21:57:01 +0800</pubDate>
+      
+      <guid>https://mylife.github.io/2018/07/hugo/</guid>
+      <description>linux安装hugo环境 Arch linux从community仓库安装输入： $ sudo pacman -Syu hugo Ubuntu安装最新版： $ sudo snap install hugo 查看版本。当时安装v0.</description>
+    </item>
+    
+  </channel>
+</rss>

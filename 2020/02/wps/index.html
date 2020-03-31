@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+        Linux WPS 使用及 Rime 输入法安装 - Lmyan&#39;s Blog
+      </title>
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  
+  <meta name="theme-color" content="#000000" />
+  
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <meta name="description" content="安装WPS 最近用的系统是Ubuntu 18.04，直接去官网下载就能安装。类似的像有道词典、网易云音乐都能直接在官网下载安装，用起来都不错，总" />
+  <meta name="generator" content="Hugo 0.68.3 with theme pure" />
+  <title>Linux WPS 使用及 Rime 输入法安装 - Lmyan&#39;s Blog</title>
+  
+  
+  <link rel="stylesheet" href="https://mylife.github.io/css/style.min.7dc20efbc53647d41aa9ddea0c48e59300223d084e66ea0cbe7c30bd88903acc.css">
+  
+  <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+  <meta property="og:title" content="Linux WPS 使用及 Rime 输入法安装" />
+<meta property="og:description" content="安装WPS 最近用的系统是Ubuntu 18.04，直接去官网下载就能安装。类似的像有道词典、网易云音乐都能直接在官网下载安装，用起来都不错，总" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mylife.github.io/2020/02/wps/" />
+<meta property="article:published_time" content="2020-02-03T20:50:30+08:00" />
+<meta property="article:modified_time" content="2020-02-03T20:50:30+08:00" />
+<meta itemprop="name" content="Linux WPS 使用及 Rime 输入法安装">
+<meta itemprop="description" content="安装WPS 最近用的系统是Ubuntu 18.04，直接去官网下载就能安装。类似的像有道词典、网易云音乐都能直接在官网下载安装，用起来都不错，总">
+<meta itemprop="datePublished" content="2020-02-03T20:50:30&#43;08:00" />
+<meta itemprop="dateModified" content="2020-02-03T20:50:30&#43;08:00" />
+<meta itemprop="wordCount" content="1121">
+
+
+
+<meta itemprop="keywords" content="wps,Rime输入法," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Linux WPS 使用及 Rime 输入法安装"/>
+<meta name="twitter:description" content="安装WPS 最近用的系统是Ubuntu 18.04，直接去官网下载就能安装。类似的像有道词典、网易云音乐都能直接在官网下载安装，用起来都不错，总"/>
+
+  <!--[if lte IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+    <![endif]-->
+
+  <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+  </head>
+
+  
+  
+
+  <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://mylife.github.io/" target="_blank">
+            <img class="img-circle img-rotate" src="https://mylife.github.io/avatar.png" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">lmyan</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">12345671</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Shanghai, China</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="Type something..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">Home</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">Archives</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">Categories</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags/">
+                    <i class="icon icon-tags"></i>
+                  <span class="menu-title">Tags</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">About</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content"><p>Linux桌面用户</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+      <div class="widget">
+    <h3 class="widget-title"> Categories</h3>
+    <div class="widget-body">
+        <ul class="category-list">
+            <li class="category-list-item"><a href="https://mylife.github.io/categories/hugo%E5%8D%9A%E5%AE%A2/" class="category-list-link">hugo博客</a><span class="category-list-count">2</span></li>
+            <li class="category-list-item"><a href="https://mylife.github.io/categories/i3%E6%A1%8C%E9%9D%A2%E7%8E%AF%E5%A2%83/" class="category-list-link">i3桌面环境</a><span class="category-list-count">4</span></li>
+            <li class="category-list-item"><a href="https://mylife.github.io/categories/ubuntu%E6%A1%8C%E9%9D%A2%E5%BA%94%E7%94%A8/" class="category-list-link">ubuntu桌面应用</a><span class="category-list-count">6</span></li>
+        </ul>
+    </div>
+</div>
+      <div class="widget">
+    <h3 class="widget-title"> Tags</h3>
+    <div class="widget-body">
+        <ul class="tag-list">
+            
+            
+            <li class="tag-list-item"><a href="https://mylife.github.io/tags/git/" class="tag-list-link">git</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://mylife.github.io/tags/latex/" class="tag-list-link">latex</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://mylife.github.io/tags/rime%E8%BE%93%E5%85%A5%E6%B3%95/" class="tag-list-link">rime输入法</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://mylife.github.io/tags/wps/" class="tag-list-link">wps</a><span
+                    class="tag-list-count">1</span></li>
+            
+        </ul>
+
+    </div>
+</div>
+      
+<div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://mylife.github.io/2020/02/wps/" class="title">Linux WPS 使用及 Rime 输入法安装</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-02-03 20:50:30 &#43;0800 CST" itemprop="datePublished">2020-02-03</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://mylife.github.io/2020/01/snap/" class="title">Ubuntu 18.04 软件安装</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-01-12 18:50:40 &#43;0800 CST" itemprop="datePublished">2020-01-12</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://mylife.github.io/2020/01/markdown/" class="title">Hugo Markdown基础语法</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-01-10 17:17:12 &#43;0800 CST" itemprop="datePublished">2020-01-10</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://mylife.github.io/2019/05/kdenlive/" class="title">Kdenlive非线性视频剪辑软件</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2019-05-26 19:29:19 &#43;0800 CST" itemprop="datePublished">2019-05-26</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://mylife.github.io/2019/01/tor-ss/" class="title">Tor &amp; SS 代理</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2019-01-14 19:19:47 &#43;0800 CST" itemprop="datePublished">2019-01-14</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <h4 class="toc-title">Catalogue</h4>
+    <nav id="toc" class="js-toc toc">
+
+    </nav>
+  </div>
+</aside>
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2020/02/wps/"
+    >Linux WPS 使用及 Rime 输入法安装</a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://mylife.github.io/2020/02/wps/" class="article-date">
+  <time datetime="2020-02-03 20:50:30 &#43;0800 CST" itemprop="datePublished">2020-02-03</time>
+</a>
+</span>
+<span class="article-category">
+  <i class="icon icon-folder"></i>&nbsp;
+  <a class="article-category-link" href="/categories/ubuntu%E6%A1%8C%E9%9D%A2%E5%BA%94%E7%94%A8/"> Ubuntu桌面应用 </a>
+</span>  
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>&nbsp;
+    <a class="article-tag-link" href="/tags/wps/"> wps </a>
+    <a class="article-tag-link" href="/tags/rime%E8%BE%93%E5%85%A5%E6%B3%95/"> Rime输入法 </a>
+  </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/02/wps/#comments"
+            class="article-comment-link">Comments</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 1121words</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 3minutes </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <h2 id="安装wps">安装WPS</h2>
+<p>最近用的系统是Ubuntu 18.04，直接去官网下载就能安装。类似的像有道词典、网易云音乐都能直接在官网下载安装，用起来都不错，总觉得开源自由，真心希望国内linux的生态越来越好。</p>
+<p>装好wps提示缺字体，看了一下缺的字体也没什么用，就不装了。但是没有宋体、黑体、楷体之类的有点不方便，就按照之间安装<a href="https://mylife.github.io/2018/08/latex/">latex</a>的方法安装了几个常用字体。</p>
+<h2 id="ubuntu的字体配置">Ubuntu的字体配置</h2>
+<p>WPS字体里面有好多乱七八杂的字体，有的不显示名字，有的提示系统缺失，真是不知道缺失为什么还要显示在列表里。想整理一下，查了半天也没找到办法，顺便记录Ubuntu字体配置路径：</p>
+<pre><code>/etc/fonts/fonts.conf
+/etc/fonts/conf.d/69-language-selector-zh-cn.conf
+</code></pre>
+<p>第一个配置文件不能动，第二个是中文字体默认选择顺序，我用的是英文系统。原来Ubuntu默认的中文都是Noto字体，看着也可以，就不改了。</p>
+<h2 id="wps默认主题">WPS默认主题</h2>
+<p>如果不设置，新建文档默认的就是Calibri，而其我的系统也没安装，我在Options里的View替换成微软雅黑了。打开一个空白文档，在字体设置里面，Latin字体选Times New Roman，Asian字体选宋体SimSun，字号都选五号10.5pt，左下角点Default，以后再新建Word文档字体就随心了。</p>
+<p>同样可以在Page Layout的设置李设定一下A4纸，无网格什么的，保存成Default就好了。</p>
+<h2 id="安装rime输入法">安装Rime输入法</h2>
+<p>Ubuntu下安装这个就够了，默认包含<strong>朙月拼音</strong>输入方案。<a href="https://github.com/rime/home/wiki/RimeWithIBus">官方文档</a>上还有很多可选输入方案。然后打开官方的<a href="https://github.com/rime/home/wiki/CustomizationGuide">定制指南</a>，边看边记：</p>
+<pre><code>$sudo apt install ibus-rime
+</code></pre>
+<h3 id="按组合键-ctrl-或-f4-键唤出输入方案选单">按组合键 Ctrl+` 或 F4 键唤出输入方案选单</h3>
+<p>在Linux中配置文件的位置为：~/.config/ibus/rime/。初次安装自动在里面部署预设的输入方案和设定文件，更改设定需重新部署。里面有用的文件：</p>
+<blockquote>
+<p>[全局设定] default.yaml</p>
+</blockquote>
+<blockquote>
+<p>[预设输入方案副本] &lt;方案标识&gt;.schema.yaml</p>
+</blockquote>
+<blockquote>
+<p>[安装信息] installation.yaml</p>
+</blockquote>
+<blockquote>
+<p>[用户状态信息] user.yaml</p>
+</blockquote>
+<blockquote>
+<p>[编译产生的二进制文件] *.bin</p>
+</blockquote>
+<blockquote>
+<p>[用户词典] &lt;词典名&gt;.userdb.kct</p>
+</blockquote>
+<p>自动触发重新部署：</p>
+<pre><code>rm ~/.config/ibus/rime/default.yaml; ibus-daemon -drx
+</code></pre>
+<p>我要定制自己的输入方案，需要创建default.custom.yaml文件，设定全局定制方案。创建&lt;方案标识&gt;.custom.yaml可以对预设方案进行定制。直接改动原配置文件，升级软件后会丢失。本人只需要简体输入法排在第一位，繁体输入法排在第二位备用，其它输入法删掉了。</p>
+<pre><code>patch:
+  schema_list:
+    - schema: luna_pinyin_simp
+    - schema: luna_pinyin
+</code></pre>
+<p>默认是纵向显示后选词的，在ibus-setup里面改成横向。</p>
+<p>这里没安装袖珍简化字拼音（librime-data-pinyin-simp)，是另一个简体中文的输入方案，找到的别人的<a href="https://github.com/huaxianyan/Rime">配置</a>。朙月拼音在输入简体中文时，是将繁体中文使用 OpenCC 转化成简体中文列在候选列表继而进行输入，有点小瑕疵。</p>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>Permalink: </strong>
+      <a href="https://mylife.github.io/2020/02/wps/" title="Linux WPS 使用及 Rime 输入法安装" target="_blank" rel="external">https://mylife.github.io/2020/02/wps/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://mylife.github.io/" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://mylife.github.io/avatar.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://mylife.github.io/" target="_blank"><span class="text-dark">lmyan</span><small class="ml-1x">12345671</small></a></h3>
+        <div>Good Good Study, Day Day Up~</div>
+      </div>
+    </figure>
+  </div>
+</div>
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://mylife.github.io/2020/01/snap/" title="Ubuntu 18.04 软件安装"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;Older</span></a>
+            </li>
+            
+            <li class="toggle-toc">
+                <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false"
+                    title="Catalogue" role="button">
+                    <span>[&nbsp;</span><span>Catalogue</span>
+                    <i class="text-collapsed icon icon-anchor"></i>
+                    <i class="text-in icon icon-close"></i>
+                    <span>]</span>
+                </a>
+            </li>
+        </ul>
+        <div class="bar-right">
+            <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter"
+                data-mobile-sites="weibo,qq,qzone"></div>
+        </div>
+    </div>
+</nav>
+
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/xiaoheiAh" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+    <li><a href="https://mylife.github.io/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-rss"></i></a></li>
+</ul>
+  <div class="copyright">
+    &copy;2017  -
+    2020
+    <div class="publishby">
+        Theme by <a href="https://github.com/xiaoheiAh" target="_blank"> xiaoheiAh </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://mylife.github.io/js/application.min.bdeb64b910570b6c41badc6a05b7afb0c8ad9efd8525de3c7257d59e786326a3.js"></script>
+<script src="https://mylife.github.io/js/plugin.min.51ff8c7317566f82259170fa36e09c4493adc9b9378b427a01ad3f017ebac7dd.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            ROOT_URL: 'https:\/\/mylife.github.io\/',
+            CONTENT_URL: 'https:\/\/mylife.github.io\/\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://mylife.github.io/js/insight.min.a343cd9a5a7698336b28ef3a7c16a3a1b1d2d5fb17dc8ed04022bbe08cc5459073a15bdafa3a8a58cdd56080784bdd69fa70b1ae8597565c799c57ed00f0e120.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+
+  </body>
+</html>

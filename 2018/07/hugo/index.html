@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+        Linux Install Hugo &amp; Git - Lmyan&#39;s Blog
+      </title>
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  
+  <meta name="theme-color" content="#000000" />
+  
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <meta name="description" content="linux安装hugo环境 Arch linux从community仓库安装输入： $ sudo pacman -Syu hugo Ubuntu安装最新版： $ sudo snap install hugo 查看版本。当时安装v0." />
+  <meta name="generator" content="Hugo 0.68.3 with theme pure" />
+  <title>Linux Install Hugo &amp; Git - Lmyan&#39;s Blog</title>
+  
+  
+  <link rel="stylesheet" href="https://mylife.github.io/css/style.min.7dc20efbc53647d41aa9ddea0c48e59300223d084e66ea0cbe7c30bd88903acc.css">
+  
+  <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+  <meta property="og:title" content="Linux Install Hugo &amp; Git" />
+<meta property="og:description" content="linux安装hugo环境 Arch linux从community仓库安装输入： $ sudo pacman -Syu hugo Ubuntu安装最新版： $ sudo snap install hugo 查看版本。当时安装v0." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mylife.github.io/2018/07/hugo/" />
+<meta property="article:published_time" content="2018-07-24T21:57:01+08:00" />
+<meta property="article:modified_time" content="2018-07-24T21:57:01+08:00" />
+<meta itemprop="name" content="Linux Install Hugo &amp; Git">
+<meta itemprop="description" content="linux安装hugo环境 Arch linux从community仓库安装输入： $ sudo pacman -Syu hugo Ubuntu安装最新版： $ sudo snap install hugo 查看版本。当时安装v0.">
+<meta itemprop="datePublished" content="2018-07-24T21:57:01&#43;08:00" />
+<meta itemprop="dateModified" content="2018-07-24T21:57:01&#43;08:00" />
+<meta itemprop="wordCount" content="1431">
+
+
+
+<meta itemprop="keywords" content="git," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Linux Install Hugo &amp; Git"/>
+<meta name="twitter:description" content="linux安装hugo环境 Arch linux从community仓库安装输入： $ sudo pacman -Syu hugo Ubuntu安装最新版： $ sudo snap install hugo 查看版本。当时安装v0."/>
+
+  <!--[if lte IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+    <![endif]-->
+
+  <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+  </head>
+
+  
+  
+
+  <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://mylife.github.io/" target="_blank">
+            <img class="img-circle img-rotate" src="https://mylife.github.io/avatar.png" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">lmyan</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">12345671</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Shanghai, China</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="Type something..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">Home</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">Archives</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">Categories</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags/">
+                    <i class="icon icon-tags"></i>
+                  <span class="menu-title">Tags</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">About</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content"><p>Linux桌面用户</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+      <div class="widget">
+    <h3 class="widget-title"> Categories</h3>
+    <div class="widget-body">
+        <ul class="category-list">
+            <li class="category-list-item"><a href="https://mylife.github.io/categories/hugo%E5%8D%9A%E5%AE%A2/" class="category-list-link">hugo博客</a><span class="category-list-count">2</span></li>
+            <li class="category-list-item"><a href="https://mylife.github.io/categories/i3%E6%A1%8C%E9%9D%A2%E7%8E%AF%E5%A2%83/" class="category-list-link">i3桌面环境</a><span class="category-list-count">4</span></li>
+            <li class="category-list-item"><a href="https://mylife.github.io/categories/ubuntu%E6%A1%8C%E9%9D%A2%E5%BA%94%E7%94%A8/" class="category-list-link">ubuntu桌面应用</a><span class="category-list-count">6</span></li>
+        </ul>
+    </div>
+</div>
+      <div class="widget">
+    <h3 class="widget-title"> Tags</h3>
+    <div class="widget-body">
+        <ul class="tag-list">
+            
+            
+            <li class="tag-list-item"><a href="https://mylife.github.io/tags/git/" class="tag-list-link">git</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://mylife.github.io/tags/latex/" class="tag-list-link">latex</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://mylife.github.io/tags/rime%E8%BE%93%E5%85%A5%E6%B3%95/" class="tag-list-link">rime输入法</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://mylife.github.io/tags/wps/" class="tag-list-link">wps</a><span
+                    class="tag-list-count">1</span></li>
+            
+        </ul>
+
+    </div>
+</div>
+      
+<div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://mylife.github.io/2020/02/wps/" class="title">Linux WPS 使用及 Rime 输入法安装</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-02-03 20:50:30 &#43;0800 CST" itemprop="datePublished">2020-02-03</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://mylife.github.io/2020/01/snap/" class="title">Ubuntu 18.04 软件安装</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-01-12 18:50:40 &#43;0800 CST" itemprop="datePublished">2020-01-12</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://mylife.github.io/2020/01/markdown/" class="title">Hugo Markdown基础语法</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-01-10 17:17:12 &#43;0800 CST" itemprop="datePublished">2020-01-10</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://mylife.github.io/2019/05/kdenlive/" class="title">Kdenlive非线性视频剪辑软件</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2019-05-26 19:29:19 &#43;0800 CST" itemprop="datePublished">2019-05-26</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://mylife.github.io/2019/01/tor-ss/" class="title">Tor &amp; SS 代理</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2019-01-14 19:19:47 &#43;0800 CST" itemprop="datePublished">2019-01-14</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <h4 class="toc-title">Catalogue</h4>
+    <nav id="toc" class="js-toc toc">
+
+    </nav>
+  </div>
+</aside>
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2018/07/hugo/"
+    >Linux Install Hugo &amp; Git</a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://mylife.github.io/2018/07/hugo/" class="article-date">
+  <time datetime="2018-07-24 21:57:01 &#43;0800 CST" itemprop="datePublished">2018-07-24</time>
+</a>
+</span>
+<span class="article-category">
+  <i class="icon icon-folder"></i>&nbsp;
+  <a class="article-category-link" href="/categories/hugo%E5%8D%9A%E5%AE%A2/"> Hugo博客 </a>
+</span>  
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>&nbsp;
+    <a class="article-tag-link" href="/tags/git/"> git </a>
+  </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2018/07/hugo/#comments"
+            class="article-comment-link">Comments</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 1431words</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 3minutes </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <h2 id="linux安装hugo环境">linux安装hugo环境</h2>
+<p>Arch linux从community仓库安装输入：</p>
+<pre><code>$ sudo pacman -Syu hugo
+</code></pre>
+<p>Ubuntu安装最新版：</p>
+<pre><code>$ sudo snap install hugo
+</code></pre>
+<p>查看版本。当时安装v0.44版，使用hugo server -t 调用主题出现bug，在配置文件里使用(theme = &ldquo;theme name&rdquo;)正常。</p>
+<pre><code>$ hugo version
+</code></pre>
+<p>第一步创建自己的网站根目录</p>
+<pre><code>$ hugo new site mysite
+</code></pre>
+<p>目录下默认有这些文件,其中config.toml是配置文件，创建的文档会在content目录下。</p>
+<pre><code>drwxr-xr-x  9 lmyan lmyan 4096 Jul 27 21:18 .
+drwx------ 21 lmyan lmyan 4096 Jul 27 21:26 ..
+drwxr-xr-x  2 lmyan lmyan 4096 Jul 24 20:39 archetypes
+-rw-r--r--  1 lmyan lmyan 2499 Jul 27 21:18 config.toml
+drwxr-xr-x  3 lmyan lmyan 4096 Jul 27 21:26 content
+drwxr-xr-x  2 lmyan lmyan 4096 Jul 24 20:39 data
+drwxr-xr-x  2 lmyan lmyan 4096 Jul 24 20:39 layouts
+drwxr-xr-x  2 lmyan lmyan 4096 Jul 24 20:56 resources
+drwxr-xr-x  3 lmyan lmyan 4096 Jul 27 19:37 static
+drwxr-xr-x  3 lmyan lmyan 4096 Jul 26 22:25 themes
+</code></pre>
+<h2 id="配置hugo">配置hugo</h2>
+<p>安装主题，比如<a href="https://themes.gohugo.io/hugo_theme_pickles/">Pickles</a></p>
+<pre><code>$ cd themes
+$  git clone -b release https://github.com/mismith0227/hugo_theme_pickles
+</code></pre>
+<p>自动安装好，国内不用代理都下载不下来，没有全局代理的可以安装proxychains，直接从主题模板里复制配置文件把默认的替换掉，并且配置文件里加上（theme = &ldquo;hugo_theme_pickles&rdquo;）。</p>
+<pre><code>$ cp themes/hugo_theme_pickles/exampleSite/config.toml .
+</code></pre>
+<p>创建自己的第一个文档</p>
+<pre><code>hugo new posts/first-site.md
+</code></pre>
+<p>这条语句会在content文件夹下创建posts文件夹及first-site.md。md代表markdown语法，没学过的自学一会。新创建的文件里有:</p>
+<pre><code>draft: ture
+</code></pre>
+<p>代表此文件为草稿，写好文章后改为false。</p>
+<p>在draft下一行增加tags标记：</p>
+<pre><code>tags: [&quot;tag1&quot;,&quot;tag2&quot;,&quot;tag3&quot;]
+</code></pre>
+<p>启动hugo服务，加上-D参数表示编译草稿，要不看不到。</p>
+<pre><code>$ hugo server -D
+</code></pre>
+<p>在浏览器输入http://localhost:1313 就可以看到博客内容了。</p>
+<pre><code>$ hugo new about.md
+</code></pre>
+<p>创建一个说明页面，文件会生成在content目录下，用来自我介绍。
+比如配置文件里baseurl代表自己的域名，其他条目有的就可以改成自己的。</p>
+<p>static文件用来存放图片、css、js等，优先级比theme里的高，如果要添加favicon，把图标放到里面，调用的时候把配置文家里的路径改一下。比如我创建了images文件夹。</p>
+<pre><code>favicon = &quot;/images/favicon.jpg&quot; 
+</code></pre>
+<p>添加评论功能，模板中集成disqus，config.toml中输入参数disqus = “id”。登录disqus.com，点GET STRATED。然后选 I want to install Disqus on my site，填写信息，其中Website Name就是配置文件中要填写的id。</p>
+<p>添加google analytics，<a href="https://analytics.google.com/">注册</a>，在配置文件中填写ga_api_key一项。</p>
+<h2 id="安装git">安装git</h2>
+<p>注册帐号，网上有教程，要注意的是把Respository name改成Your-name.github.io，这样可以通过这个地址直接访问。</p>
+<p>配置SSH，生成密钥</p>
+<pre><code>$ ssh-keygen -t rsa -C &quot;youremail@example.com&quot;
+</code></pre>
+<p>之后在.ssh目录下生成私钥和公钥</p>
+<pre><code>id_rsa        私钥，不能泄露出去
+id_rsa.pub    公钥，可告诉任何人
+</code></pre>
+<p>登录Github，依次点击”settings”——&gt;”SSH and GPG keys”——&gt;”New SSH Key”，Title随便写，可以用cat命令查看id_ras.pub,复制到Key的文本框里，Add SSH Key。</p>
+<p>本地安装Git软件包，安装好后配置:</p>
+<pre><code>$ git config --global user.name &quot;Your Name&quot;
+$ git config --global user.email &quot;email@example.com&quot;
+</code></pre>
+<h2 id="托管到github">托管到github</h2>
+<pre><code>$ hugo
+</code></pre>
+<p>生成HTML文件至public目录，将public里面的内容上传到github</p>
+<pre><code>$ cd public
+$ git init
+$ git remote add origin git@github.com:usename/username.github.io.git
+$ git add -A
+$ git commit -m &quot;first commit&quot;
+$ git push -u origin master
+</code></pre>
+<p>之后更新文章并生成好静态页面以后，就可以使用 Git push 来同步了。</p>
+<pre><code>$ cd public
+$ git add .
+$ git status
+$ git commit -m &quot;add blog post&quot;
+$ git push
+</code></pre>
+<p>一键部署脚本</p>
+<pre><code>#!/bin/bash
+
+echo -e &quot;\033[0;32mDeploying updates to GitHub...\033[0m&quot;
+msg=&quot;rebuilding site `date`&quot;
+if [ $# -eq 1 ]
+then msg=&quot;$1&quot;
+fi
+
+hugo 
+
+cd public
+git add -A
+git commit -m &quot;$msg&quot;
+git push --force -u origin master
+
+cd ../
+</code></pre>
+<p>默认用日期表示提交，也可以用./deploy.sh commit内容的方式。</p>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>Permalink: </strong>
+      <a href="https://mylife.github.io/2018/07/hugo/" title="Linux Install Hugo &amp; Git" target="_blank" rel="external">https://mylife.github.io/2018/07/hugo/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://mylife.github.io/" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://mylife.github.io/avatar.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://mylife.github.io/" target="_blank"><span class="text-dark">lmyan</span><small class="ml-1x">12345671</small></a></h3>
+        <div>Good Good Study, Day Day Up~</div>
+      </div>
+    </figure>
+  </div>
+</div>
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="next">
+                <a href="https://mylife.github.io/about/"
+                    title="About"><span>Newer&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            </li>
+            
+            <li class="toggle-toc">
+                <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false"
+                    title="Catalogue" role="button">
+                    <span>[&nbsp;</span><span>Catalogue</span>
+                    <i class="text-collapsed icon icon-anchor"></i>
+                    <i class="text-in icon icon-close"></i>
+                    <span>]</span>
+                </a>
+            </li>
+        </ul>
+        <div class="bar-right">
+            <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter"
+                data-mobile-sites="weibo,qq,qzone"></div>
+        </div>
+    </div>
+</nav>
+
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/xiaoheiAh" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+    <li><a href="https://mylife.github.io/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-rss"></i></a></li>
+</ul>
+  <div class="copyright">
+    &copy;2017  -
+    2020
+    <div class="publishby">
+        Theme by <a href="https://github.com/xiaoheiAh" target="_blank"> xiaoheiAh </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://mylife.github.io/js/application.min.bdeb64b910570b6c41badc6a05b7afb0c8ad9efd8525de3c7257d59e786326a3.js"></script>
+<script src="https://mylife.github.io/js/plugin.min.51ff8c7317566f82259170fa36e09c4493adc9b9378b427a01ad3f017ebac7dd.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            ROOT_URL: 'https:\/\/mylife.github.io\/',
+            CONTENT_URL: 'https:\/\/mylife.github.io\/\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://mylife.github.io/js/insight.min.a343cd9a5a7698336b28ef3a7c16a3a1b1d2d5fb17dc8ed04022bbe08cc5459073a15bdafa3a8a58cdd56080784bdd69fa70b1ae8597565c799c57ed00f0e120.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+
+  </body>
+</html>

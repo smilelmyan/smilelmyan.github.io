@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+        Arch linux install i3 windows manager - Lmyan&#39;s Blog
+      </title>
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  
+  <meta name="theme-color" content="#000000" />
+  
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <meta name="description" content="i3是一个非常有效率的窗口管理器。 安装i3和状态栏 $ sudo pacman -S i3-gaps i3status i3 配置 开机启动 在.xinitrc中添加 exec i3 在.bashrc中添加 if [[ &amp;quot;$(tty)&amp;quot; = &amp;quot;/dev/tty1&amp;quot; ]]; then" />
+  <meta name="generator" content="Hugo 0.68.3 with theme pure" />
+  <title>Arch linux install i3 windows manager - Lmyan&#39;s Blog</title>
+  
+  
+  <link rel="stylesheet" href="https://mylife.github.io/css/style.min.7dc20efbc53647d41aa9ddea0c48e59300223d084e66ea0cbe7c30bd88903acc.css">
+  
+  <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+  <meta property="og:title" content="Arch linux install i3 windows manager" />
+<meta property="og:description" content="i3是一个非常有效率的窗口管理器。 安装i3和状态栏 $ sudo pacman -S i3-gaps i3status i3 配置 开机启动 在.xinitrc中添加 exec i3 在.bashrc中添加 if [[ &quot;$(tty)&quot; = &quot;/dev/tty1&quot; ]]; then" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mylife.github.io/2018/08/i3/" />
+<meta property="article:published_time" content="2018-08-19T18:36:14+08:00" />
+<meta property="article:modified_time" content="2018-08-19T18:36:14+08:00" />
+<meta itemprop="name" content="Arch linux install i3 windows manager">
+<meta itemprop="description" content="i3是一个非常有效率的窗口管理器。 安装i3和状态栏 $ sudo pacman -S i3-gaps i3status i3 配置 开机启动 在.xinitrc中添加 exec i3 在.bashrc中添加 if [[ &quot;$(tty)&quot; = &quot;/dev/tty1&quot; ]]; then">
+<meta itemprop="datePublished" content="2018-08-19T18:36:14&#43;08:00" />
+<meta itemprop="dateModified" content="2018-08-19T18:36:14&#43;08:00" />
+<meta itemprop="wordCount" content="954">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Arch linux install i3 windows manager"/>
+<meta name="twitter:description" content="i3是一个非常有效率的窗口管理器。 安装i3和状态栏 $ sudo pacman -S i3-gaps i3status i3 配置 开机启动 在.xinitrc中添加 exec i3 在.bashrc中添加 if [[ &quot;$(tty)&quot; = &quot;/dev/tty1&quot; ]]; then"/>
+
+  <!--[if lte IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+    <![endif]-->
+
+  <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+  </head>
+
+  
+  
+
+  <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://mylife.github.io/" target="_blank">
+            <img class="img-circle img-rotate" src="https://mylife.github.io/avatar.png" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">lmyan</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">12345671</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Shanghai, China</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="Type something..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">Home</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">Archives</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">Categories</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags/">
+                    <i class="icon icon-tags"></i>
+                  <span class="menu-title">Tags</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">About</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content"><p>Linux桌面用户</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+      <div class="widget">
+    <h3 class="widget-title"> Categories</h3>
+    <div class="widget-body">
+        <ul class="category-list">
+            <li class="category-list-item"><a href="https://mylife.github.io/categories/hugo%E5%8D%9A%E5%AE%A2/" class="category-list-link">hugo博客</a><span class="category-list-count">2</span></li>
+            <li class="category-list-item"><a href="https://mylife.github.io/categories/i3%E6%A1%8C%E9%9D%A2%E7%8E%AF%E5%A2%83/" class="category-list-link">i3桌面环境</a><span class="category-list-count">4</span></li>
+            <li class="category-list-item"><a href="https://mylife.github.io/categories/ubuntu%E6%A1%8C%E9%9D%A2%E5%BA%94%E7%94%A8/" class="category-list-link">ubuntu桌面应用</a><span class="category-list-count">6</span></li>
+        </ul>
+    </div>
+</div>
+      <div class="widget">
+    <h3 class="widget-title"> Tags</h3>
+    <div class="widget-body">
+        <ul class="tag-list">
+            
+            
+            <li class="tag-list-item"><a href="https://mylife.github.io/tags/git/" class="tag-list-link">git</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://mylife.github.io/tags/latex/" class="tag-list-link">latex</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://mylife.github.io/tags/rime%E8%BE%93%E5%85%A5%E6%B3%95/" class="tag-list-link">rime输入法</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://mylife.github.io/tags/wps/" class="tag-list-link">wps</a><span
+                    class="tag-list-count">1</span></li>
+            
+        </ul>
+
+    </div>
+</div>
+      
+<div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://mylife.github.io/2020/02/wps/" class="title">Linux WPS 使用及 Rime 输入法安装</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-02-03 20:50:30 &#43;0800 CST" itemprop="datePublished">2020-02-03</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://mylife.github.io/2020/01/snap/" class="title">Ubuntu 18.04 软件安装</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-01-12 18:50:40 &#43;0800 CST" itemprop="datePublished">2020-01-12</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://mylife.github.io/2020/01/markdown/" class="title">Hugo Markdown基础语法</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-01-10 17:17:12 &#43;0800 CST" itemprop="datePublished">2020-01-10</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://mylife.github.io/2019/05/kdenlive/" class="title">Kdenlive非线性视频剪辑软件</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2019-05-26 19:29:19 &#43;0800 CST" itemprop="datePublished">2019-05-26</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://mylife.github.io/2019/01/tor-ss/" class="title">Tor &amp; SS 代理</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2019-01-14 19:19:47 &#43;0800 CST" itemprop="datePublished">2019-01-14</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <h4 class="toc-title">Catalogue</h4>
+    <nav id="toc" class="js-toc toc">
+
+    </nav>
+  </div>
+</aside>
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2018/08/i3/"
+    >Arch linux install i3 windows manager</a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://mylife.github.io/2018/08/i3/" class="article-date">
+  <time datetime="2018-08-19 18:36:14 &#43;0800 CST" itemprop="datePublished">2018-08-19</time>
+</a>
+</span>
+<span class="article-category">
+  <i class="icon icon-folder"></i>&nbsp;
+  <a class="article-category-link" href="/categories/i3%E6%A1%8C%E9%9D%A2%E7%8E%AF%E5%A2%83/"> i3桌面环境 </a>
+</span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2018/08/i3/#comments"
+            class="article-comment-link">Comments</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 954words</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 2minutes </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <p>i3是一个非常有效率的窗口管理器。</p>
+<h2 id="安装i3和状态栏">安装i3和状态栏</h2>
+<pre><code>$ sudo pacman -S i3-gaps i3status
+</code></pre>
+<h2 id="i3-配置">i3 配置</h2>
+<h4 id="开机启动">开机启动</h4>
+<p>在.xinitrc中添加</p>
+<pre><code>exec i3
+</code></pre>
+<p>在.bashrc中添加</p>
+<pre><code>if [[ &quot;$(tty)&quot; = &quot;/dev/tty1&quot; ]]; then
+    pgrep i3 || startx
+fi
+</code></pre>
+<h4 id="安装终端">安装终端</h4>
+<pre><code>$ sudo pacman -S rxvt-unicode
+</code></pre>
+<p>如果要在ranger中预览照片，aur安装rxvt-unicode-pixbuf</p>
+<h4 id="配置文件">配置文件</h4>
+<p>配置文件路径~/.congfig/i3/config，里面全部是i3的快捷键设置，一般把功能键改成win键</p>
+<pre><code>set $mod Mod4
+</code></pre>
+<p>其它默认可以不动，比如win+enter能快速打开终端，win+d打开程序，目前做的改动</p>
+<pre><code>bar {
+        status_command /home/lmyan/.i3status.sh
+	position top
+	colors{
+		statusline #c7edcc  
+      		separator #ceecee
+	}
+}
+
+# set windows gaps 
+for_window [class=&quot;^.*&quot;] border pixel 1
+gaps inner 15
+gaps outer 5
+
+# adjust volume
+bindsym $Mod+minus exec --no-startup-id amixer set Master -q 5%-
+bindsym $Mod+plus exec --no-startup-id amixer set Master -q 5%+
+
+# Print screen focused window
+bindsym Print exec --no-startup-id scrot -u '%Y%m%d_%H%M%S.png' -e 'mv $f ~/Pictures/shots/'
+# Print screen entire view
+bindsym $mod+Print exec --no-startup-id scrot '%Y%m%d_%Ho%M%S.png' -e 'mv $f ~/Pictures/shots/'
+# Print interactively choose a window
+bindsym --release $mod+Shift+Print exec --no-startup-id scrot -s '%Y%m%d_%H%M%S.png' -e 'mv $f ~/Pictures/shots/'
+
+# wallpaper
+exec --no-startup-id feh --bg-scale /home/lmyan/Pictures/arch2.png
+
+#urxvt transparent
+exec --no-startup-id xcompmgr &amp;
+
+# input method
+exec --no-startup-id fcitx &amp;
+
+# firefox
+bindsym $mod+i exec --no-startup-id firefox
+
+# media mpc
+bindsym $mod+p exec --no-startup-id mpc toggle
+bindsym $mod+comma exec --no-startup-id mpc prev
+bindsym $mod+period exec --no-startup-id mpc next
+bindsym $mod+Shift+p exec --no-startup-id ~/Desktop/i3script/removesong.sh
+
+# power management
+bindsym $mod+x exec systemctl suspend
+bindsym $mod+Shift+x exec systemctl poweroff
+
+# ranger
+bindsym $mod+o exec i3-sensible-terminal -e ranger
+
+# zathura
+# bindsym $mod+z exec i3-sensible-terminal -e zathura
+bindsym $mod+z exec zathura
+
+# udisks2 to mount usb 
+bindsym $mod+m exec --no-startup-id &quot;udisksctl mount -o fmask=133,dmask=022 -b /dev/sdc1&quot;
+bindsym $mod+Shift+m exec --no-startup-id &quot;udisksctl unmount -b /dev/sdc1&quot;
+
+
+</code></pre>
+<p>安装的i3-gaps可以增加窗口之间的间隙，feh用来设置壁纸。</p>
+<h2 id="i3status配置">i3status配置</h2>
+<p>采用了执行脚本的方式，网上下载的脚本。保存在~/.i3status.sh。</p>
+<pre><code>#!/bin/sh
+
+# Authors:
+# - Moritz Warning &lt;moritzwarning@web.de&gt; (2016)
+# - Zhong Jianxin &lt;azuwis@gmail.com&gt; (2014)
+#
+# See file LICENSE at the project root directory for license information.
+#
+# i3status.conf should contain:
+# general {
+#   output_format = i3bar
+# }
+#
+# i3 config looks like this:
+# bar {
+#   status_command exec /usr/share/doc/i3status/contrib/net-speed.sh
+# }
+#
+# Single interface:
+# ifaces=&quot;eth0&quot;
+#
+# Multiple interfaces:
+# ifaces=&quot;eth0 wlan0&quot;
+#
+
+# Auto detect interfaces
+ifaces=$(ls /sys/class/net | grep -E '^(eth|wlan|enp|wlp)')
+
+last_time=0
+last_rx=0
+last_tx=0
+rate=&quot;&quot;
+
+readable() {
+  local bytes=$1
+  local kib=$(( bytes &gt;&gt; 10 ))
+  if [ $kib -lt 0 ]; then
+    echo &quot;? K&quot;
+  elif [ $kib -gt 1024 ]; then
+    local mib_int=$(( kib &gt;&gt; 10 ))
+    local mib_dec=$(( kib % 1024 * 976 / 10000 ))
+    if [ &quot;$mib_dec&quot; -lt 10 ]; then
+      mib_dec=&quot;0${mib_dec}&quot;
+    fi
+    echo &quot;${mib_int}.${mib_dec} M&quot;
+  else
+    echo &quot;${kib} K&quot;
+  fi
+}
+
+update_rate() {
+  local time=$(date +%s)
+  local rx=0 tx=0 tmp_rx tmp_tx
+
+  for iface in $ifaces; do
+    read tmp_rx &lt; &quot;/sys/class/net/${iface}/statistics/rx_bytes&quot;
+    read tmp_tx &lt; &quot;/sys/class/net/${iface}/statistics/tx_bytes&quot;
+    rx=$(( rx + tmp_rx ))
+    tx=$(( tx + tmp_tx ))
+  done
+
+  local interval=$(( $time - $last_time ))
+  if [ $interval -gt 0 ]; then
+    rate=&quot;Speed: $(readable $(( (rx - last_rx) / interval )))↓ $(readable $(( (tx - last_tx) / interval )))↑&quot;
+  else
+    rate=&quot;&quot;
+  fi
+
+  last_time=$time
+  last_rx=$rx
+  last_tx=$tx
+  playing=$(ncmpcpp --current-song='%f' 2&gt;/dev/null)
+}
+
+i3status | (read line &amp;&amp; echo &quot;$line&quot; &amp;&amp; read line &amp;&amp; echo &quot;$line&quot; &amp;&amp; read line &amp;&amp; echo &quot;$line&quot; &amp;&amp; update_rate &amp;&amp; while :
+do
+  read line
+  update_rate
+  echo &quot;,[{\&quot;full_text\&quot;:\&quot;${playing} \&quot;} , {\&quot;full_text\&quot;:\&quot; ${rate} \&quot;},${line#,\[} &quot; || exit 1
+done)
+</code></pre>
+<p>添加了显示mpd歌曲名，i3状态栏配置在~/.i2status.conf。</p>
+<pre><code>general {
+	colors = true
+	interval = 1
+	output_format = i3bar
+	color_good = &quot;#c7edcc&quot;
+	color_degraded = &quot;#8c7f22&quot;
+	color_bad = &quot;#be2422&quot;
+}
+
+order += &quot;disk /&quot;
+order += &quot;wireless wlp3s0&quot;
+#order += &quot;ethernet enp0s31f6&quot;
+order += &quot;cpu_usage&quot;
+order += &quot;volume master&quot;
+order += &quot;tztime local&quot;
+
+wireless wlp3s0 {
+	format_up = &quot; WiFi: %ip %quality %bitrate &quot;
+	format_down = &quot; WiFi: (/) &quot;
+}
+
+ethernet enp0s31f6 {
+	format_up = &quot; LAN: %ip %speed &quot;
+	format_down = &quot; LAN: (/) &quot;
+}
+
+tztime local {
+	format = &quot; Date: %m/%d/%y  Time: %H:%M &quot;
+}
+
+cpu_usage {
+	format = &quot; CPU: %usage &quot;
+}
+
+disk &quot;/&quot; {
+	format = &quot; Disk: %free &quot;
+}
+
+volume master {
+	format = &quot; Vol: %volume &quot;
+	device = &quot;default&quot;
+	mixer = &quot;Master&quot;
+	mixer_idx = 0
+}
+</code></pre>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>Permalink: </strong>
+      <a href="https://mylife.github.io/2018/08/i3/" title="Arch linux install i3 windows manager" target="_blank" rel="external">https://mylife.github.io/2018/08/i3/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://mylife.github.io/" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://mylife.github.io/avatar.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://mylife.github.io/" target="_blank"><span class="text-dark">lmyan</span><small class="ml-1x">12345671</small></a></h3>
+        <div>Good Good Study, Day Day Up~</div>
+      </div>
+    </figure>
+  </div>
+</div>
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://mylife.github.io/2018/08/config-arch/" title="Arch配置i3桌面的终端和输入法"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;Older</span></a>
+            </li>
+            <li class="next">
+                <a href="https://mylife.github.io/2018/09/vsftpd/"
+                    title="Vsftpd 匿名用户配置"><span>Newer&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            </li>
+            
+            <li class="toggle-toc">
+                <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false"
+                    title="Catalogue" role="button">
+                    <span>[&nbsp;</span><span>Catalogue</span>
+                    <i class="text-collapsed icon icon-anchor"></i>
+                    <i class="text-in icon icon-close"></i>
+                    <span>]</span>
+                </a>
+            </li>
+        </ul>
+        <div class="bar-right">
+            <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter"
+                data-mobile-sites="weibo,qq,qzone"></div>
+        </div>
+    </div>
+</nav>
+
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/xiaoheiAh" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+    <li><a href="https://mylife.github.io/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-rss"></i></a></li>
+</ul>
+  <div class="copyright">
+    &copy;2017  -
+    2020
+    <div class="publishby">
+        Theme by <a href="https://github.com/xiaoheiAh" target="_blank"> xiaoheiAh </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://mylife.github.io/js/application.min.bdeb64b910570b6c41badc6a05b7afb0c8ad9efd8525de3c7257d59e786326a3.js"></script>
+<script src="https://mylife.github.io/js/plugin.min.51ff8c7317566f82259170fa36e09c4493adc9b9378b427a01ad3f017ebac7dd.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            ROOT_URL: 'https:\/\/mylife.github.io\/',
+            CONTENT_URL: 'https:\/\/mylife.github.io\/\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://mylife.github.io/js/insight.min.a343cd9a5a7698336b28ef3a7c16a3a1b1d2d5fb17dc8ed04022bbe08cc5459073a15bdafa3a8a58cdd56080784bdd69fa70b1ae8597565c799c57ed00f0e120.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+
+  </body>
+</html>
